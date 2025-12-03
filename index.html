@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Start Strong – Fitness Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">Start<strong>Strong</strong></div>
+      <nav class="nav-links">
+        <a href="#start-here">Start Here</a>
+        <a href="#plan-builder">Workout Plan</a>
+        <a href="#exercise-library">Exercises</a>
+        <a href="#nutrition">Nutrition</a>
+        <a href="#stretching">Stretching</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Begin your fitness journey with clarity.</h1>
+        <p>
+          Use this simple site to build your own workout plan, learn how to eat
+          to support your goals, stretch safely, and understand which
+          exercises build what.
+        </p>
+        <div class="hero-actions">
+          <button id="btnToPlan" class="btn primary">Build a plan</button>
+          <button id="btnToStart" class="btn">Browse guides</button>
+        </div>
+        <p class="small-note">
+          This site is educational only. Talk to a doctor before starting a new
+          exercise or nutrition program.
+        </p>
+      </div>
+    </section>
+
+    <!-- START HERE -->
+    <section id="start-here" class="section">
+      <h2>1. Start Here – The Basics</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Set a clear goal</h3>
+          <p>
+            Choose one main focus for the next 8–12 weeks:
+            <strong>build muscle</strong>, <strong>get stronger</strong>,
+            <strong>lose fat</strong>, or <strong>move/feel better</strong>.
+          </p>
+          <ul>
+            <li>Write it somewhere you see daily.</li>
+            <li>Make it realistic for your schedule.</li>
+            <li>Focus on habits, not perfection.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>What a week can look like</h3>
+          <p>
+            A balanced week usually includes strength, some cardio, and at
+            least one full rest day.
+          </p>
+          <ul>
+            <li>2–4 days of strength training.</li>
+            <li>Light cardio or walking most days.</li>
+            <li>Short stretching sessions after workouts.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>How to track progress</h3>
+          <p>
+            Progress isn’t only about the scale. Look for other signs too.
+          </p>
+          <ul>
+            <li>Stronger: more weight or reps.</li>
+            <li>Endurance: less tired, better breathing.</li>
+            <li>Everyday: better sleep, clothes fit, mood.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PLAN BUILDER -->
+    <section id="plan-builder" class="section">
+      <h2>2. Build a Simple Workout Plan</h2>
+      <div class="two-col">
+        <div>
+          <div class="field">
+            <label for="goalSelect">Primary goal</label>
+            <select id="goalSelect">
+              <option value="balanced">Balanced / Tone</option>
+              <option value="muscle">Build Muscle</option>
+              <option value="strength">Strength</option>
+              <option value="fatloss">Fat Loss</option>
+              <option value="endurance">Endurance</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="daysInput">Days you can train per week</label>
+            <input id="daysInput" type="number" min="2" max="6" value="3" />
+          </div>
+
+          <div class="field">
+            <label for="timeInput">Minutes per session</label>
+            <input id="timeInput" type="number" min="20" max="120" value="45" />
+          </div>
+
+          <p class="field-help">
+            This builder creates a simple weekly layout. You can fill in exact
+            exercises using the library below.
+          </p>
+
+          <button id="btnGeneratePlan" class="btn primary">
+            Generate weekly template
+          </button>
+        </div>
+
+        <div class="plan-output">
+          <h3>Your Week Overview</h3>
+          <p id="planSummary" class="small-note">
+            3 days · Balanced / Tone · 45 min
+          </p>
+          <div id="planDays" class="plan-days">
+            <!-- JS will fill this -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXERCISE LIBRARY -->
+    <section id="exercise-library" class="section">
+      <h2>3. Exercise Library – What Builds What?</h2>
+      <p class="section-intro">
+        Filter by body part and goal to find exercises. These are examples, not
+        the only options.
+      </p>
+
+      <div class="filter-row">
+        <div class="filter-group">
+          <button class="chip active" data-muscle="all">All</button>
+          <button class="chip" data-muscle="upper">Upper</button>
+          <button class="chip" data-muscle="lower">Lower</button>
+          <button class="chip" data-muscle="core">Core</button>
+          <button class="chip" data-muscle="full">Full / Cardio</button>
+        </div>
+
+        <input
+          id="exerciseSearch"
+          type="text"
+          class="search-input"
+          placeholder="Search (e.g. dumbbell, squat)"
+        />
+      </div>
+
+      <div id="exerciseGrid" class="grid">
+        <!-- JS will render exercise cards here -->
+      </div>
+
+      <p class="small-note">
+        Sharp or unusual pain is a red flag. Stop that movement and talk to a
+        professional.
+      </p>
+    </section>
+
+    <!-- NUTRITION -->
+    <section id="nutrition" class="section">
+      <h2>4. How to Eat for Your Goal</h2>
+      <div class="two-col">
+        <article class="card">
+          <h3>Build a simple plate</h3>
+          <p>
+            You don’t have to count calories. Start with this rule of thumb for
+            most meals:
+          </p>
+          <ul>
+            <li>1–2 palm-sized servings of protein.</li>
+            <li>1–2 cupped handfuls of carbs.</li>
+            <li>1–2 thumbs of healthy fats.</li>
+            <li>Fill the rest of the plate with vegetables.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Adjust for muscle gain vs. fat loss</h3>
+          <ul>
+            <li><strong>Muscle gain:</strong> slightly bigger portions, especially carbs.</li>
+            <li><strong>Fat loss:</strong> slightly smaller portions, focus on protein + veggies.</li>
+            <li>Drink mostly water or low-cal drinks.</li>
+            <li>Sleep and stress control matter as much as the food.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- STRETCHING -->
+    <section id="stretching" class="section">
+      <h2>5. Stretching & Recovery</h2>
+      <div class="two-col">
+        <article class="card">
+          <h3>Before your workout – warm up</h3>
+          <ul>
+            <li>3–5 minutes of light cardio (walk, bike, easy jog).</li>
+            <li>Move joints through their range: arm circles, leg swings.</li>
+            <li>Do 1–2 light sets of your first exercise as practice.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>After your workout – cool down</h3>
+          <ul>
+            <li>Hold simple stretches for 20–30 seconds (no bouncing).</li>
+            <li>Focus on areas you trained (e.g., legs after squats).</li>
+            <li>Breathe slowly to let your heart rate come down.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <h2>Common Questions</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>How many days per week is enough?</h3>
+          <p>
+            You can make progress with 2 focused strength sessions per week.
+            More days give more practice, but only if you can recover and stay
+            consistent.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>When will I see results?</h3>
+          <p>
+            Strength and energy can improve in a few weeks. Visible changes
+            usually take 8–12+ weeks. Be patient and track small wins.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© StartStrong – simple fitness for beginners.</span>
+      <span class="small-note">
+        Educational only – not medical or personalized coaching advice.
+      </span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
